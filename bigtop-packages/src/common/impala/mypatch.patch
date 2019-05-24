@@ -1,0 +1,44 @@
+diff --git a/bin/bootstrap_build.sh b/bin/bootstrap_build.sh
+index b94a026a4..3174ec4a0 100755
+--- a/bin/bootstrap_build.sh
++++ b/bin/bootstrap_build.sh
+@@ -54,4 +54,4 @@ if [ ! -d /usr/local/apache-maven-3.5.4 ]; then
+   sudo ln -s /usr/local/apache-maven-3.5.4/bin/mvn /usr/local/bin
+ fi
+ 
+-./buildall.sh -notests -so
++../buildall.sh -notests -so
+diff --git a/bin/impala-config-branch.sh b/bin/impala-config-branch.sh
+index adad8cfc1..bf3f4d5ae 100644
+--- a/bin/impala-config-branch.sh
++++ b/bin/impala-config-branch.sh
+@@ -21,4 +21,4 @@
+ # branch.
+ #
+ # E.g. to override IMPALA_HADOOP_VERSION, you could uncomment this line:
+-# IMPALA_HADOOP_VERSION=3.0.0
++IMPALA_HADOOP_VERSION=3.0.0
+diff --git a/buildall.sh b/buildall.sh
+index 8eab21da5..64c5708a0 100755
+--- a/buildall.sh
++++ b/buildall.sh
+@@ -18,6 +18,7 @@
+ # under the License.
+ 
+ set -euo pipefail
++IMPALA_HOME=`dirname "$0"`
+ . $IMPALA_HOME/bin/report_build_error.sh
+ setup_report_build_error
+ 
+diff --git a/cmake_modules/toolchain.cmake b/cmake_modules/toolchain.cmake
+index c508646d2..15c1d4910 100644
+--- a/cmake_modules/toolchain.cmake
++++ b/cmake_modules/toolchain.cmake
+@@ -28,6 +28,7 @@ if($ENV{USE_SYSTEM_GCC} EQUAL "0")
+   # specifying an LD_LIBRARY_PATH
+   set(TOOLCHAIN_LINK_FLAGS "-Wl,-rpath,${GCC_ROOT}/lib64")
+   set(TOOLCHAIN_LINK_FLAGS "${TOOLCHAIN_LINK_FLAGS} -L${GCC_ROOT}/lib64")
++  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+ endif()
+ 
+ if(NOT $ENV{IMPALA_CXX_COMPILER} STREQUAL "default")

@@ -1,0 +1,5 @@
+hello-world (1.2.3-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Bigtop <dev@bigtop.apache.org>  Tue, 07 May 2019 17:36:38 +0530

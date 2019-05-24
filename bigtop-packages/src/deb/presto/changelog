@@ -1,0 +1,5 @@
+presto (0.218-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Bigtop <dev@bigtop.apache.org>  Wed, 08 May 2019 16:01:36 +0530

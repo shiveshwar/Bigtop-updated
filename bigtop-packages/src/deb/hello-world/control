@@ -1,0 +1,15 @@
+Source: hello-world
+Section: unknown
+Priority: optional
+Maintainer: Bigtop <dev@bigtop.apache.org>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://anonscm.debian.org/collab-maint/hello-world.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/hello-world.git
+
+Package: hello-world
+Architecture: all
+Depends: ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

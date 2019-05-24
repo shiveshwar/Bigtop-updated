@@ -1,0 +1,5 @@
+#!/bin/bash
+set -ex
+cat >build/hello_world.sh <<'EOF'
+cat $(dirname $0)/hello_world.txt
+EOF
